@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <header>
         <nav className="container mx-auto flex justify-between items-center py-3">
-            <div className="text-4xl text-red-600 font-medium">{portfolioData.logoname}</div> 
+            <div className="text-4xl text-red-600 font-medium"><a href="/">{portfolioData.logoname}</a></div> 
             <div>
                 <ul className="flex gap-3 space-x-1 text-white font-medium text-lg">
                     {navLinks.map((link) => (
