@@ -2,7 +2,7 @@ import { navLinks } from "../data/navData";
 import { portfolioData } from "../data/userData";
 const Navbar = () => {
   return (
-    <header>
+    <header className="sticky top-0 bg-black">
         <nav className="container mx-auto flex justify-between items-center py-3">
             <div className="text-4xl text-red-600 font-medium">{portfolioData.logoname}</div> 
             <div>
