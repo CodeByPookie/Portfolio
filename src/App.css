@@ -1,0 +1,16 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.cus_title-underline::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #e7000b;
+    margin-top: 1px;
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+.cus_title-underline:hover::after, .cus_title-underline.active::after  {
+    width: 70%;
+}
