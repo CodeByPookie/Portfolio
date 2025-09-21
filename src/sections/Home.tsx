@@ -1,6 +1,9 @@
 import { portfolioData } from "../data/userData";
 import profilepic from '../assets/profilepic.jpg';
 import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation} from "swiper/modules";
+import "swiper/swiper-bundle.css";
 
 const Home = () => {
   return (
@@ -10,7 +13,11 @@ const Home = () => {
       {/* Profile About Section */}
       {About()}     
       {/* Experience and Education Section */}
-        {experienceandEducation()}        
+      {experienceandEducation()}     
+      {/* Skills Section */}
+      {skills()}      
+      {/* My Services Section */}
+      {MyServices()}
     </main>
   );
 };
@@ -86,6 +93,7 @@ const experience = () =>{
           <li>Built custom backend modules and Web APIs to extend Dynamicweb functionality.</li>
           <li>Collaborated with team members to integrate frontend and backend components efficiently.</li>
           <li>Participated in code reviews and optimized performance for existing modules.</li>
+          <li>Worked with Azure DevOps for source control (cloning repositories, raising pull requests) and task management (creating work items, updating states).</li>      
         </ul>
       </div>
     </div>
@@ -115,5 +123,76 @@ const education = () =>{
     </div>
   )
 }
+const skills =() =>{
+  return(
+    <div className="text-white mt-5">
+        <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-4">Skills</div>      
+        <div className="py-5">
+          <Swiper 
+            modules={[Navigation]}
+            spaceBetween={0}
+            navigation
+            breakpoints={{
+              320: { slidesPerView: 2 },  // Mobile
+              640: { slidesPerView: 3 },  // Small tablets
+              1024: { slidesPerView: 8 }, // Desktop
+            }}
+            className="cus_SkillsSwiper" 
+          >
+           {portfolioData.Skills.map((skill, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex flex-col items-center">
+                  <img
+                    src={skill.imgpath}
+                    alt={skill.name}
+                    className="w-20 h-20 object-contain bg-white p-2 rounded-full"
+                  />
+                  <span className="text-white mt-2">{skill.name}</span>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>   
+    </div>   
+  )
+}
+const MyServices = () => {
+  return (
+    <div className="text-white mt-5">
+      <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-6">
+        My Services
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-7 my-7">
+        {portfolioData.myServices.map((service, index) => {
+          const Logo = service.logo; // get component
+          return (
+            <div
+              key={index}
+              id={`service_${index}`}
+              className="cus_bg-gray px-6 py-8 flex flex-col justify-between"
+            >
+              <div>
+                <div className="logo-holder mb-4">
+                  <Logo width={68}/>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-gray-300 mb-4">{service.description}</p>
+              </div>
+              <div>
+                <a
+                  href={service.gotolink}
+                  className="text-red-600 font-medium hover:underline"
+                >
+                  See More
+                </a>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
 
 export default Home;
