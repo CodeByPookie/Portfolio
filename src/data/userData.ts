@@ -1,4 +1,6 @@
 import codeIc from '../svgcomponents/code';
+import cropAlt from '../svgcomponents/cropAlt';
+import Api from '../svgcomponents/api';
 
 export interface PortfolioData {
   logoname: string;
@@ -46,11 +48,11 @@ export const portfolioData: PortfolioData = {
     title:"Web Development",
     description:"I build responsive, user-friendly websites using ASP.Net MVC. I'm also expanding my skills with modern frameworks like React and .NET Core.",
     gotolink:"#"},    
-    {logo:codeIc,
+    {logo:Api,
     title:"Custom Modules & Web APIs",
     description:"I create powerful backend logic, custom modules, and RESTful Web APIs using ASP.Net and C#.",
     gotolink:"#"},
-    {logo:codeIc,
+    {logo:cropAlt,
     title:"UI/UX Design",
     description:"I design clean, intuitive, and engaging interfaces with Figma.",
     gotolink:"#"}

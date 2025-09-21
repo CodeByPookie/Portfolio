@@ -169,12 +169,12 @@ const MyServices = () => {
           return (
             <div
               key={index}
-              id={`service_${index}`}
-              className="cus_bg-gray px-6 py-8 flex flex-col justify-between"
+              id={`service_${index + 1}`}
+              className="bg-[#262626] hover:bg-red-600 px-6 py-8 flex flex-col justify-between cus_service-li"
             >
               <div>
                 <div className="logo-holder mb-4">
-                  <Logo width={68}/>
+                  <Logo width={68} height={45}/>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-gray-300 mb-4">{service.description}</p>
@@ -182,7 +182,7 @@ const MyServices = () => {
               <div>
                 <a
                   href={service.gotolink}
-                  className="text-red-600 font-medium hover:underline"
+                  className="text-red-600 font-medium hover:underline cus_myservice-link"
                 >
                   See More
                 </a>

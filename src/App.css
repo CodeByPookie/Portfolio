@@ -27,3 +27,12 @@
 .cus_bg-gray{
     background-color: #262626;
 }
+.cus_service-li:hover .cus_myservice-link{
+    color: #ffffff;
+}
+.cus_service-li {
+    transition: transform 0.3s ease;
+}
+.cus_service-li:hover {
+    transform: translateY(-10px);
+}
