@@ -14,3 +14,16 @@
 .cus_title-underline:hover::after, .cus_title-underline.active::after  {
     width: 70%;
 }
+.cus_SkillsSwiper{
+    width: 85%;    
+}
+.cus_SkillsSwiper .swiper-button-prev ,.cus_SkillsSwiper .swiper-button-next{
+    height: 20px;
+    width: 20px;
+    color: #ffffff;
+    margin-top: 0;
+}
+/*--- My Service ---*/
+.cus_bg-gray{
+    background-color: #262626;
+}
