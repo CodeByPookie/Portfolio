@@ -1,7 +1,6 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
-
 .cus_title-underline::after {
     content: '';
     display: block;
