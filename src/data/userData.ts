@@ -81,6 +81,11 @@ export const portfolioData: PortfolioData = {
       title:"Project Name", 
       desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
       projectLink:"#",
+      logo:explore},
+      {projectBg:exampleWorkBG, 
+      title:"Project Name", 
+      desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
+      projectLink:"#",
       logo:explore}
   ]
 };

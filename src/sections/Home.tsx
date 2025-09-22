@@ -195,7 +195,7 @@ const MyServices = () => {
 }
 const MyWork = () => {
   return (
-    <div className="text-white mt-5">
+    <div className="text-white my-5">
       <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-6">
         My Work
       </div>
@@ -223,7 +223,7 @@ const MyWork = () => {
 
       </div>
 
-      {portfolioData.MyWork.length > 2 && (
+      {portfolioData.MyWork.length > 3 && (
         <div className="flex justify-center my-6">
           <button className="px-6 py-2 border border-red-600 bg-transparent text-white rounded-xs hover:bg-red-700 ">
             More Products

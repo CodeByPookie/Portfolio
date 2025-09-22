@@ -1,6 +1,7 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
+
 .cus_title-underline::after {
     content: '';
     display: block;
@@ -31,16 +32,17 @@
     color: #ffffff;
 }
 .cus_service-li {
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 .cus_service-li:hover {
     transform: translateY(-10px);
+    transition: background-color 0.5s;
 }
 .work-layer{
     background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);    
 }
 .project_logo path {
-    fill: #000000;
+    fill: #ff004f;
 }
 .work:hover img{
     transform: scale(1.1);
@@ -54,4 +56,7 @@
 }
 .work:hover .work-layer{
     height: 100%;
+}
+button{
+    transition: background-color 0.5s;
 }
