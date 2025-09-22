@@ -39,3 +39,19 @@
 .work-layer{
     background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);    
 }
+.project_logo path {
+    fill: #000000;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work img{
+    transition: transform 0.5s;
+}
+.work-layer{
+    transition: height 0.5s;
+    height: 0%;
+}
+.work:hover .work-layer{
+    height: 100%;
+}
