@@ -208,13 +208,13 @@ const MyWork = () => {
               key={index} id={`service_${index + 1}`}
             >
               <img src={work.projectBg} className="rounded-[10px] w-100 h-100 block"/>
-              <div className="work-layer w-100 h-100 rounded-[10px] absolute top-0 bottom-0 overflow-hidden flex flex-col justify-center items-center px-10 text-center text-[14px]">
-                <h3 className="font-medium mb-5 text-[20px]">{work.title}</h3>
-                <p>
+              <div className="work-layer w-100 rounded-[10px] absolute bottom-0 overflow-hidden flex flex-col justify-center items-center px-10 text-center text-[14px]">
+                <h3 className="font-medium mb-5 text-[16px] ">{work.title}</h3>
+                <p className="mb-2">
                   {work.desc}
                 </p>
-                <a href={work.projectLink}>
-                  <Logo/>
+                <a href={work.projectLink} className="mt-3 w-[40px] h-[40px] bg-white rounded-full flex justify-center items-center">
+                  <Logo className="project_logo w-3.5 h-auto"/>
                 </a>
               </div>
             </div>
