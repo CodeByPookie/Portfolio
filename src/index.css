@@ -13,11 +13,7 @@
         @apply container mx-auto
     }
 }
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-white to-pink-700 bg-clip-text text-transparent;
-  }
-}
+
 
 
 
