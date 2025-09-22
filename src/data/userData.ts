@@ -1,6 +1,8 @@
 import codeIc from '../svgcomponents/code';
 import cropAlt from '../svgcomponents/cropAlt';
 import Api from '../svgcomponents/api';
+import exampleWorkBG from '../assets/workbg/exampleworkbg.jpg';
+import explore from '../svgcomponents/explore';
 
 export interface PortfolioData {
   logoname: string;
@@ -19,6 +21,13 @@ export interface PortfolioData {
     description:string;
     gotolink:string;
   }[];
+  MyWork:{
+    projectBg:string;
+    title:string;
+    desc:string;
+    projectLink:string;
+    logo: typeof explore;
+  }[];
 }
 export const portfolioData: PortfolioData = {
   logoname: "Karthika." ,
@@ -28,20 +37,20 @@ export const portfolioData: PortfolioData = {
   tagline:"I build and design user-friendly applications with strong backend logic.",
   City:"Srivilliputhur",
   Skills:[
-    {name:"HTML5", imgpath:"/src/assets/skills/html.jpg"},
-    {name:"CSS3", imgpath:"/src/assets/skills/css.jpg"},
-    {name:"JavaScript", imgpath:"/src/assets/skills/js.jpg"},
-    {name:"JQuery", imgpath:"/src/assets/skills/jquery.jpg"},
-    {name:"Bootstrap", imgpath:"/src/assets/skills/bootstrap.jpg"},
-    {name:"C#", imgpath:"/src/assets/skills/csharp.jpg"},
-    {name:"ASP.NET", imgpath:"/src/assets/skills/aspdotnet.jpg"},
-    {name:"Git", imgpath:"/src/assets/skills/git.jpg"},
-    {name:"GitHub", imgpath:"/src/assets/skills/github.jpg"},
-    {name:"Postman", imgpath:"/src/assets/skills/postman.jpg"},
-    {name:"React", imgpath:"/src/assets/skills/react.jpg"},
-    {name:"Tailwind CSS", imgpath:"/src/assets/skills/tailwind.jpg"},
-    {name:"TypeScript", imgpath:"/src/assets/skills/typescript.jpg"},
-    {name:"SQL", imgpath:"/src/assets/skills/sql.jpg"},
+    {name:"HTML5", imgpath:"asstes/skills/html.jpg"},
+    {name:"CSS3", imgpath:"asstes/skills/css.jpg"},
+    {name:"JavaScript", imgpath:"asstes/skills/js.jpg"},
+    {name:"JQuery", imgpath:"asstes/skills/jquery.jpg"},
+    {name:"Bootstrap", imgpath:"asstes/skills/bootstrap.jpg"},
+    {name:"C#", imgpath:"asstes/skills/csharp.jpg"},
+    {name:"ASP.NET", imgpath:"asstes/skills/aspdotnet.jpg"},
+    {name:"Git", imgpath:"asstes/skills/git.jpg"},
+    {name:"GitHub", imgpath:"asstes/skills/github.jpg"},
+    {name:"Postman", imgpath:"asstes/skills/postman.jpg"},
+    {name:"React", imgpath:"asstes/skills/react.jpg"},
+    {name:"Tailwind CSS", imgpath:"asstes/skills/tailwind.jpg"},
+    {name:"TypeScript", imgpath:"asstes/skills/typescript.jpg"},
+    {name:"SQL", imgpath:"asstes/skills/sql.jpg"},
   ],
   myServices:[
     {logo:codeIc,
@@ -56,5 +65,22 @@ export const portfolioData: PortfolioData = {
     title:"UI/UX Design",
     description:"I design clean, intuitive, and engaging interfaces with Figma.",
     gotolink:"#"}
+  ],
+  MyWork:[
+    {projectBg:exampleWorkBG,
+      title:"Project Name",
+      desc:"The app connects you yo the talented people around the world. Download it from play store.", 
+      projectLink:"#",
+      logo:explore},
+    {projectBg:exampleWorkBG, 
+      title:"Project Name", 
+      desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
+      projectLink:"#",
+      logo:explore},
+    {projectBg:exampleWorkBG, 
+      title:"Project Name", 
+      desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
+      projectLink:"#",
+      logo:explore}
   ]
 };

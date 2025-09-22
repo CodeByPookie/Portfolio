@@ -36,3 +36,6 @@
 .cus_service-li:hover {
     transform: translateY(-10px);
 }
+.work-layer{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);    
+}

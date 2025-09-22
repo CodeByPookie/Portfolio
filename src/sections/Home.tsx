@@ -18,6 +18,8 @@ const Home = () => {
       {skills()}      
       {/* My Services Section */}
       {MyServices()}
+      {/* My Work Section */}
+      {MyWork()}
     </main>
   );
 };
@@ -39,7 +41,6 @@ const intro = () =>{
     </div>      
   )
 }
-
 const About = () => {
   return(      
     <div className="text-white">
@@ -58,7 +59,6 @@ const About = () => {
     </div>   
   )
 }
-
 const experienceandEducation = () => {
   const [activeSection, setActiveSection] = useState("experience");
   return(
@@ -78,7 +78,6 @@ const experienceandEducation = () => {
     </div>
   )
 }
-
 const experience = () =>{
   return(
   <div className="mt-4">
@@ -165,7 +164,7 @@ const MyServices = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-7 my-7">
         {portfolioData.myServices.map((service, index) => {
-          const Logo = service.logo; // get component
+          const Logo = service.logo;
           return (
             <div
               key={index}
@@ -193,6 +192,45 @@ const MyServices = () => {
       </div>
     </div>
   );
-};
+}
+const MyWork = () => {
+  return (
+    <div className="text-white mt-5">
+      <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-6">
+        My Work
+      </div>
 
+      <div className=" work-list grid grid-cols-1 md:grid-cols-3 gap-10 mt-7">
+        {portfolioData.MyWork.slice(0, 3).map((work, index) => {
+          const Logo = work.logo;
+          return (
+            <div className="work rounded-[10px] relative overflow-hidden" 
+              key={index} id={`service_${index + 1}`}
+            >
+              <img src={work.projectBg} className="rounded-[10px] w-100 h-100 block"/>
+              <div className="work-layer w-100 h-100 rounded-[10px] absolute top-0 bottom-0 overflow-hidden flex flex-col justify-center items-center px-10 text-center text-[14px]">
+                <h3 className="font-medium mb-5 text-[20px]">{work.title}</h3>
+                <p>
+                  {work.desc}
+                </p>
+                <a href={work.projectLink}>
+                  <Logo/>
+                </a>
+              </div>
+            </div>
+          );
+        })}
+
+      </div>
+
+      {portfolioData.MyWork.length > 2 && (
+        <div className="flex justify-center my-6">
+          <button className="px-6 py-2 border border-red-600 bg-transparent text-white rounded-xs hover:bg-red-700 ">
+            More Products
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
 export default Home;
