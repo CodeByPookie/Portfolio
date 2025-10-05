@@ -2,7 +2,7 @@ import { portfolioData } from "../data/userData";
 import profilepic from '../assets/profilepic.jpg';
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation} from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 const Home = () => {
@@ -130,9 +130,14 @@ const skills =() =>{
         <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-4">Skills</div>      
         <div className="py-5">
           <Swiper 
-            modules={[Navigation]}
+            modules={[Autoplay]}
             spaceBetween={0}
             navigation
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false, // keeps auto sliding even after manual navigation
+            }}
             breakpoints={{
               320: { slidesPerView: 2 },  // Mobile
               640: { slidesPerView: 3 },  // Small tablets
@@ -227,7 +232,7 @@ const MyWork = () => {
 
       {portfolioData.MyWork.length > 3 && (
         <div className="flex justify-center my-6">
-          <button className="px-6 py-2 border border-red-600 bg-transparent text-white rounded-xs hover:bg-red-700 ">
+          <button className="px-6 py-2 border border-red-600 bg-transparent text-white rounded-xs hover:bg-red-700 cursor-pointer">
             See More 
           </button>
         </div>
