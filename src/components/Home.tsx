@@ -20,6 +20,8 @@ const Home = () => {
       {MyServices()}
       {/* My Work Section */}
       {MyWork()}
+      {/* Contact Section */}
+      {Contact()}
     </main>
   );
 };
@@ -36,7 +38,7 @@ const intro = () =>{
         </div>
         <div className="text-2xl font-bold max-w-3xl text-wrap py-2">{portfolioData.jobTitle}</div>
         <div className="italic text-sm">{portfolioData.tagline}</div>
-        <div className="flex justify-end">- From {portfolioData.City}</div>
+        {/* <div className="flex justify-end">- From {portfolioData.City}</div> */}
       </div>
     </div>      
   )
@@ -195,7 +197,7 @@ const MyServices = () => {
 }
 const MyWork = () => {
   return (
-    <div className="text-white mt-5">
+    <div className="text-white my-5">
       <div className="text-4xl font-medium border-b-3 border-red-600 w-fit mb-6">
         My Work
       </div>
@@ -204,7 +206,7 @@ const MyWork = () => {
         {portfolioData.MyWork.slice(0, 3).map((work, index) => {
           const Logo = work.logo;
           return (
-            <div className="work rounded-[10px] relative overflow-hidden" 
+            <div className="work rounded-[10px] relative overflow-hidden w-100" 
               key={index} id={`service_${index + 1}`}
             >
               <img src={work.projectBg} className="rounded-[10px] w-100 h-100 block"/>
@@ -223,14 +225,51 @@ const MyWork = () => {
 
       </div>
 
-      {portfolioData.MyWork.length > 2 && (
+      {portfolioData.MyWork.length > 3 && (
         <div className="flex justify-center my-6">
           <button className="px-6 py-2 border border-red-600 bg-transparent text-white rounded-xs hover:bg-red-700 ">
-            More Products
+            See More 
           </button>
         </div>
       )}
     </div>
   );
 };
+const Contact = () => {
+  return(
+    <div className="text-white my-[50px] flex flex-col md:flex-row gap-10">
+      <div>
+        <div className="text-4xl font-semibold">Contact Me</div>
+        <div className="mt-4">
+          {portfolioData.ContactInfo.map((info, index) => {
+            const Logo = info.logo;
+            return (
+              <div key={index} className="flex items-center mb-3">
+                <Logo className="mr-2 size-4" />
+                <a href={info.link} target="_blank" rel="noopener noreferrer" className="text-gray-300 font-medium hover:underline">
+                  {info.text}
+                </a>
+              </div>
+            );
+          })}
+        </div>
+        <div className="pt-10">
+          <a href="/Karthika_CV.pdf" download="Karthika_CV.pdf" className="bg-[#FF004F] text-white py-4 px-10 border-0 outline-0 rounded cursor-pointer">
+              Download CV
+          </a>
+        </div>
+      </div>
+      <div className="ps-10">
+        <form id="contactform">
+          <input type="text" placeholder="Your Name" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
+          <input type="email" placeholder="Your Email" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
+          <textarea placeholder="Your Message" className="w-[500px] h-[176px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"></textarea>
+          <div className="pt-6">
+            <button type="submit" className="bg-[#FF004F] text-white py-4 px-10 border-0 outline-0 rounded cursor-pointer"> Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  )
+}
 export default Home;
