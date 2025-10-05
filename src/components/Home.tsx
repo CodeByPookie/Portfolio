@@ -2,7 +2,7 @@ import { portfolioData } from "../data/userData";
 import profilepic from '../assets/profilepic.jpg';
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 const Home = () => {
