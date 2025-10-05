@@ -1,8 +1,5 @@
-import codeIc from '../svgcomponents/code';
-import cropAlt from '../svgcomponents/cropAlt';
-import Api from '../svgcomponents/api';
+import { Api, codeIc, cropAlt, Explore, Email, Phone, GitHub ,LinkedIn } from "../svgcomponents/Icons";
 import exampleWorkBG from '../assets/workbg/exampleworkbg.jpg';
-import explore from '../svgcomponents/explore';
 
 export interface PortfolioData {
   logoname: string;
@@ -26,7 +23,12 @@ export interface PortfolioData {
     title:string;
     desc:string;
     projectLink:string;
-    logo: typeof explore;
+    logo: typeof Explore;
+  }[];
+  ContactInfo:{
+    logo: typeof Email | typeof Phone | typeof GitHub | typeof LinkedIn;
+    link:string;
+    text:string;
   }[];
 }
 export const portfolioData: PortfolioData = {
@@ -71,21 +73,27 @@ export const portfolioData: PortfolioData = {
       title:"Project Name",
       desc:"The app connects you yo the talented people around the world. Download it from play store.", 
       projectLink:"#",
-      logo:explore},
+      logo:Explore},
     {projectBg:exampleWorkBG, 
       title:"Project Name", 
       desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
       projectLink:"#",
-      logo:explore},
+      logo:Explore},
     {projectBg:exampleWorkBG, 
       title:"Project Name", 
       desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
       projectLink:"#",
-      logo:explore},
+      logo:Explore},
       {projectBg:exampleWorkBG, 
       title:"Project Name", 
       desc:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, laborum perspiciatis autem praesentium blanditiis,cupiditate porro impedit vel", 
       projectLink:"#",
-      logo:explore}
+      logo:Explore}
+  ],
+  ContactInfo:[
+    {logo:Email, link:"mailto:karthikapazhanivel12@gmail.com",text:"karthikapazhanivel12@gmail.com"},
+    {logo:Phone, link:"tel:9361377482",text:"9361377482"},
+    {logo:GitHub, link:"https://github.com/CodeByPookie",text:"CodeByPookie"},
+    {logo:LinkedIn, link:"https://www.linkedin.com/in/karthikapazhanivel/",text:"karthikapazhanivel"}
   ]
 };
