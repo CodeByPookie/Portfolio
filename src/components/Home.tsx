@@ -1,9 +1,10 @@
 import { portfolioData } from "../data/userData";
 import profilepic from '../assets/profilepic.jpg';
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import emailjs from "emailjs-com";
 
 const Home = () => {
   return (
@@ -241,6 +242,32 @@ const MyWork = () => {
   );
 };
 const Contact = () => {
+  const formRef = useRef(null);
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const sendEmail = (e:any) => {
+    e.preventDefault();
+      if (!formRef.current) return;
+
+    emailjs.sendForm(
+      "service_selva1229", // replace with your EmailJS service ID
+      "template_c3ueb5d", // replace with your EmailJS template ID 
+      formRef.current,   
+      "JGDp7qI5e_gRrO2JP" // replace with your EmailJS public key
+    )
+    .then(
+      (result) => {
+        console.log(result.text);
+        setSuccessMessage("Message sent successfully!");
+        e.target.reset(); // Reset form after submission
+      },
+      (error) => {
+        console.log(error.text);
+        setSuccessMessage("Failed to send message. Please try again.");
+      }
+    );
+  };
+
   return(
     <div className="text-white my-[50px] flex flex-col md:flex-row gap-10">
       <div>
@@ -265,13 +292,15 @@ const Contact = () => {
         </div>
       </div>
       <div className="ps-10">
-        <form id="contactform">
-          <input type="text" placeholder="Your Name" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
-          <input type="email" placeholder="Your Email" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
-          <textarea placeholder="Your Message" className="w-[500px] h-[176px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"></textarea>
+        <form ref={formRef} onSubmit={sendEmail}>
+          <input type="text" name="user_name" placeholder="Your Name" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
+          <input type="email" name="user_email" placeholder="Your Email" className="w-[500px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"/>
+          <textarea name="message" placeholder="Your Message" className="w-[500px] h-[176px] p-3 mb-4 bg-[#262626] border-0 outline-0 rounded"></textarea>
+          <input type="hidden" name="time" value={new Date().toLocaleString()} />
           <div className="pt-6">
             <button type="submit" className="bg-[#FF004F] text-white py-4 px-10 border-0 outline-0 rounded cursor-pointer"> Submit</button>
           </div>
+          {successMessage && <p className="mt-4 text-green-500">{successMessage}</p>}
         </form>
       </div>
     </div>
